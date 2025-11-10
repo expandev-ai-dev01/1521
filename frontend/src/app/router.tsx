@@ -6,6 +6,7 @@ import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 const HomePage = lazy(() => import('@/pages/Home'));
 const NewsListPage = lazy(() => import('@/pages/NewsList'));
 const NewsDetailPage = lazy(() => import('@/pages/NewsDetail'));
+const MediaGalleryPage = lazy(() => import('@/pages/MediaGallery'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -62,6 +63,14 @@ export const router = createBrowserRouter([
             ),
           },
         ],
+      },
+      {
+        path: 'galeria',
+        element: (
+          <Suspense fallback={<LoadingSpinner />}>
+            <MediaGalleryPage />
+          </Suspense>
+        ),
       },
       {
         path: '*',

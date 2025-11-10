@@ -33,12 +33,12 @@ export const HomePage = () => {
             <p className="text-gray-600 mb-4">
               Fotos e vídeos recentes de jogos, jogadores e eventos esportivos.
             </p>
-            <button
-              disabled
-              className="inline-block px-4 py-2 bg-gray-300 text-gray-600 rounded-md cursor-not-allowed"
+            <Link
+              to="/galeria"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
             >
-              Em breve
-            </button>
+              Ver galeria
+            </Link>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Busca</h2>
