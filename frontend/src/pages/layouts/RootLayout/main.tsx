@@ -9,7 +9,7 @@ import { Footer } from './_impl/Footer';
  * @type layout-component
  * @category layout
  */
-export const RootLayout = () => {
+const RootLayout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />

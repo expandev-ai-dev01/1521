@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 /**
  * @page HomePage
  * @summary Home page displaying welcome message and introduction.
@@ -16,21 +18,39 @@ export const HomePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Notícias</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-4">
               Acompanhe as últimas notícias sobre times, campeonatos e jogadores.
             </p>
+            <Link
+              to="/noticias"
+              className="inline-block px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
+              Ver notícias
+            </Link>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Galeria</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-4">
               Fotos e vídeos recentes de jogos, jogadores e eventos esportivos.
             </p>
+            <button
+              disabled
+              className="inline-block px-4 py-2 bg-gray-300 text-gray-600 rounded-md cursor-not-allowed"
+            >
+              Em breve
+            </button>
           </div>
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-semibold text-gray-900 mb-4">Busca</h2>
-            <p className="text-gray-600">
+            <p className="text-gray-600 mb-4">
               Sistema avançado de busca e recomendação de conteúdo relacionado.
             </p>
+            <button
+              disabled
+              className="inline-block px-4 py-2 bg-gray-300 text-gray-600 rounded-md cursor-not-allowed"
+            >
+              Em breve
+            </button>
           </div>
         </div>
       </div>

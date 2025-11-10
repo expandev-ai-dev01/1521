@@ -1,9 +1,11 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { RootLayout } from '@/pages/layouts/RootLayout';
+import RootLayout from '@/pages/layouts/RootLayout';
 import { LoadingSpinner } from '@/core/components/LoadingSpinner';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const NewsListPage = lazy(() => import('@/pages/NewsList'));
+const NewsDetailPage = lazy(() => import('@/pages/NewsDetail'));
 const NotFoundPage = lazy(() => import('@/pages/NotFound'));
 
 /**
@@ -39,6 +41,27 @@ export const router = createBrowserRouter([
             <HomePage />
           </Suspense>
         ),
+      },
+      {
+        path: 'noticias',
+        children: [
+          {
+            index: true,
+            element: (
+              <Suspense fallback={<LoadingSpinner />}>
+                <NewsListPage />
+              </Suspense>
+            ),
+          },
+          {
+            path: ':id',
+            element: (
+              <Suspense fallback={<LoadingSpinner />}>
+                <NewsDetailPage />
+              </Suspense>
+            ),
+          },
+        ],
       },
       {
         path: '*',
